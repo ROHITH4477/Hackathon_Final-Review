@@ -85,9 +85,9 @@ const PsychologyArticles = ({ currentFilter }) => {
       const query = queryMap[currentFilter] || 'mental health';
 
       try {
-        // NewsData.io Endpoint
+        // NewsData.io Endpoint with category=health to ensure relevance
         const response = await fetch(
-          `https://newsdata.io/api/1/news?apikey=${API_KEY}&q=${encodeURIComponent(query)}&language=en`
+          `https://newsdata.io/api/1/news?apikey=${API_KEY}&q=${encodeURIComponent(query)}&language=en&category=health`
         );
 
         if (!response.ok) {
